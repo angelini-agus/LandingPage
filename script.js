@@ -2,6 +2,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     e.preventDefault();
     
     const formData = {
+        to_email: 'azserviciosdelimpieza@gmail.com', 
         nombre: document.getElementById('nombre').value,
         apellido: document.getElementById('apellido').value,
         empresa: document.getElementById('empresa').value,
@@ -11,25 +12,18 @@ document.getElementById('contactForm').addEventListener('submit', async function
     };
 
     try {
-        // Aquí puedes agregar tu lógica para enviar los datos
-        // Por ejemplo, usando fetch para enviar a un servidor:
-        /*
-        const response = await fetch('tu-url-de-api', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(formData)
-        });
+        emailjs.init('iMwjxITzJQ3ItjXAI');
         
-        const data = await response.json();
-        */
-
-        // Por ahora, solo mostraremos un alert
-        alert('Mensaje enviado con éxito!');
-        this.reset();
+        const response = await emailjs.send("service_h9kkgam","template_0ie24oh", formData);
+        
+        if (response.status === 200) {
+            alert('Mensaje enviado con éxito!');
+            this.reset();
+        } else {
+            throw new Error(`Error al enviar el mensaje. Código de estado: ${response.status}`);
+        }
     } catch (error) {
-        console.error('Error:', error);
+        console.error('Error:', error.message || error);
         alert('Hubo un error al enviar el mensaje. Por favor, intente nuevamente.');
     }
 });

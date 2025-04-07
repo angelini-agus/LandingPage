@@ -9,6 +9,7 @@ html{
 body{
     font-family: "Segoe UI", sans-serif;
     margin: 0;
+    background-color: #f5f5f5;
 }
 
 h1{ font-size: 3.5em;}
@@ -23,6 +24,7 @@ li{ font-size: 1.25em;}
     color: white;
     margin-top: 30px;
     font-family: "Segoe UI", sans-serif;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
 #hero a{
@@ -51,6 +53,7 @@ li{ font-size: 1.25em;}
     align-items: center;
     flex-direction: row;
     justify-content: flex-start;
+    z-index: 1;
 }
 
 .container .logo-container{
@@ -66,7 +69,9 @@ li{ font-size: 1.25em;}
 header{
     background-color: rgb(245,245,245);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    
+    position: fixed;
+    z-index: 1000; 
+    width: 100%; 
 }
 
 header .logo{
@@ -74,7 +79,7 @@ header .logo{
     padding: 15px 0px;
     padding-left: 5px;
     font-weight: bold;
-    color: blueviolet;
+    color: rgb(101, 33, 165);
     font-size: 1.6em;
     display: flex;
     align-items: center;
@@ -101,6 +106,10 @@ header nav{
     padding-bottom: 25px;
 }
 
+.social-icons{
+    padding-top: 5px;
+}
+
 header a{
     padding: 5px 12px;
     text-decoration: none;
@@ -121,8 +130,8 @@ header a:hover{
     height: 100vh;
     background-image: linear-gradient(
         0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)
     )
     ,url("media/principal.jpg");
     background-repeat: no-repeat;
@@ -153,7 +162,7 @@ header a:hover{
 }
 #somos-proya ul {
     list-style-type: none;
-    padding: 0;
+    padding: 0px;
 }
 #somos-proya ul li {
     margin: 10px 0;
@@ -172,14 +181,19 @@ header a:hover{
     background-color: rgb(30,30,30);
     color: white;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
 }
 
 #nuestros-programas .container{
     padding: 150px 12px;
+    max-width: 1300px;
 }
 
 #nuestros-programas h2{
-    margin-top: 0;
+    margin-top: -50px;
+    margin-bottom: 40px;
     font-size: 3.2em;
 }
 
@@ -187,26 +201,21 @@ header a:hover{
     display: none;
 }
 
-#nuestros-programas .carta{
+#nuestros-programas .card{
     background-position: center center;
     background-size: cover;
-    padding: 50px 0px;
-    margin: 30px;
+    padding: 10px 0px;
+    margin: 20px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     gap: 50px;
 }
 
-#caracteristicas .container{
-    text-align: center;
-    padding: 250px 12px;
-    height: 80vh;
-}
-
-#caracteristicas li{
-    margin: 16px 0px;
-    font-weight: bold;
+div.additional-info{
+    background-position-y: -40px;
+    margin-top: 40px;
+    padding-top: 20px;
 }
 
 #final {
@@ -217,7 +226,7 @@ header a:hover{
     text-align: center;
     background-color: rgb(30,30,30);
     color: white;
-    height: 20vh;
+    height: 25vh;
     background-image: url("media/ROSARIO.jpg"); 
     background-size: cover;
     background-position: center center;
@@ -225,11 +234,11 @@ header a:hover{
 }
 
 #final h2{
-    font-size: 9vw;
+    font-size: 2vw;
 }
 
 #final a{
-    font-size: 3vw;
+    font-size: 1.5vw;
     font-weight: bold;
     padding: 10px 30px;
     border-radius: 5px;
@@ -260,6 +269,13 @@ footer .container{
     height: 5vh;
 }
 
+#somos-proya, #nuestros-programas{
+    scroll-margin-top: 20px; /* Adjust this value to control the offset */
+}
+
+#final{
+    scroll-margin-top: 80px; /* Adjust this value to control the offset */
+}
 @media (min-width: 850px){
     header{
         position: fixed;
@@ -276,6 +292,7 @@ footer .container{
         padding-bottom: 0;
         padding-right: 20px;
     }
+
 
     #hero h1{
         font-size: 5em;
@@ -306,6 +323,7 @@ footer .container{
         background-position: center center;
         height: 500px;
         width: 400px; 
+        margin-top: 15px;
     }
 
     #nuestros-programas .programas{
@@ -335,48 +353,33 @@ footer .container{
         box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
     }
 
-    .carta:first-child{
+    .card:first-child{
         background-image: linear-gradient(
             0deg,
-            rgba(0,0,0,0.5),
-            rgba(0,0,0,0.5)
+            rgba(0,0,0,0.1),
+            rgba(0,0,0,0.1)
         )
         ,url("media/cari3.jpg");
 
     }
 
-    .carta:nth-child(2){
+    .card:nth-child(2){
         background-image: linear-gradient(
             0deg,
-            rgba(0,0,0,0.5),
-            rgba(0,0,0,0.5)
+            rgba(0,0,0,0.1),
+            rgba(0,0,0,0.1)
         )
         ,url("media/agus2.jpg");
     }
 
-    .carta:nth-child(3){
+    .card:nth-child(3){
         background-image: linear-gradient(
             0deg,
-            rgba(0,0,0,0.5),
-            rgba(0,0,0,0.5)
+            rgba(0,0,0,0.1),
+            rgba(0,0,0,0.1)
         )
         ,url("media/cari1.jpg");
 
-    }
-
-    #caracteristicas{
-        background-image: url("media/dos_chicas.jpg");
-        background-repeat: no-repeat;
-        background-size: 500px 400px;
-        background-position: calc(100vw - 500px) 120px;
-    }
-
-    #caracteristicas .container{
-        text-align: initial;
-    }
-
-    #caracteristicas ul{
-        margin-left: 100px;
     }
 
     #final h2{
@@ -401,10 +404,6 @@ footer .container{
     font-family: "Segoe UI", sans-serif;
 }
 
-body {
-    background-color: #f5f5f5;
-}
-
 .contact-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -420,6 +419,7 @@ body {
 .contact-info {
     flex: 1;
     padding-right: 40px;
+    margin-top: -90px;
 }
 
 .form-container {
@@ -428,7 +428,7 @@ body {
 
 .contact-icon {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .contact-icon svg {
@@ -439,7 +439,7 @@ body {
 
 .contact-title {
     color: #666;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     font-size: 1.2em;
 }
 
@@ -548,15 +548,8 @@ textarea.form-control {
     }
 }
 
-@media (min-width: 1200px) {
-    #caracteristicas{
-        background-position-x: calc(100vw - 800px);
-    }
-}
-
 .card {
-    width: 100%;
-    max-width: 600px;
+    width: 800px;
     height: 550px;
     border-radius: 10px;
     overflow: hidden;
@@ -578,12 +571,11 @@ textarea.form-control {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.5); 
   }
   
   .card-content {
     position: relative;
-    z-index: 1;
     color: white;
     padding: 20px;
     height: 100%;
@@ -618,23 +610,30 @@ textarea.form-control {
     border: 1px solid white;
     border-radius: 5px;
     transition: background-color 0.3s;
-    margin-top: auto;
+    margin: auto; /* Center horizontally */
+    margin-bottom: 20px;
     font-size: 1.5em; /* Adjust font size for arrow */
 }
 
 .info-btn::before {
     content: "⬆"; /* Upward arrow */
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 0px;
 }
 
 .info-btn:hover {
     background-color: rgba(255, 255, 255, 0.3);
 }
+
+label.info-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
-  .additional-info {
+.additional-info {
     position: absolute;
-    bottom: 0;
+    bottom: -50px; 
     left: 0;
     width: 100%;
     background-color: rgb(30,30,30); /* Updated background color */
@@ -642,59 +641,59 @@ textarea.form-control {
     transform: translateY(100%);
     transition: transform 0.5s ease-in-out;
     max-height: 80%;
-    overflow-y: auto;
+    overflow: hidden; 
   }
   
-  .additional-info p {
+.additional-info p {
     margin-bottom: 15px;
     line-height: 1.6;
   }
   
-  .additional-info ul {
+.additional-info ul {
     margin-left: 20px;
     margin-bottom: 15px;
   }
   
-  .additional-info li {
+.additional-info li {
     margin-bottom: 5px;
   }
   
-  .info-toggle:checked ~ .additional-info {
+.info-toggle:checked ~ .additional-info {
     transform: translateY(0);
   }
   
-  .info-toggle:checked ~ .info-btn {
+.info-toggle:checked ~ .info-btn {
     background-color: rgba(255, 255, 255, 0.4);
   }
   
-  .card:hover .additional-info {
+.card:hover .additional-info {
     transform: translateY(100%);
   }
   
-  .card:hover .info-btn {
+.card:hover .info-btn {
     background-color: rgba(255, 255, 255, 0.2);
   }
   
-  .card .info-toggle:checked ~ .additional-info {
+.card .info-toggle:checked ~ .additional-info {
     transform: translateY(0);
   }
   
-  .card .info-toggle:checked ~ .info-btn {
+.card .info-toggle:checked ~ .info-btn {
     background-color: rgba(255, 255, 255, 0.4);
   }
   
-  .card:hover .additional-info {
+.card:hover .additional-info {
     transform: translateY(0);
   }
   
-  .card:hover .info-btn {
+.card:hover .info-btn {
     background-color: rgba(255, 255, 255, 0.4);
   }
   
-  .card:not(:hover) .additional-info {
+.card:not(:hover) .additional-info {
     transform: translateY(100%);
   }
   
-  .card:not(:hover) .info-btn {
+.card:not(:hover) .info-btn {
     background-color: rgba(255, 255, 255, 0.2);
   }
