@@ -35,14 +35,15 @@ li{ font-size: 1.25em;}
     border: 2px solid rgba(0,0,0,0.3);
     box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
     color: white;
-    background-color: rgb(101, 33, 165);
+    background-color: #00315f;
     text-decoration: none;
     margin-top: 30px;
     font-family: "Segoe UI", sans-serif;
+    transition: all 0.3s ease;
 }
 
 #hero a:hover{
-    background-color: #6a09cc;
+    background-color: #184269;
     text-decoration: none;
 }
 
@@ -64,7 +65,7 @@ li{ font-size: 1.25em;}
     margin: 0;
 }
 
-.color-acento{ color:blueviolet; }
+.color-acento{ color:#133453; }
 
 header{
     background-color: rgb(245,245,245);
@@ -79,18 +80,20 @@ header .logo{
     padding: 15px 0px;
     padding-left: 5px;
     font-weight: bold;
-    color: rgb(101, 33, 165);
+    color: #00315f;
     font-size: 1.6em;
     display: flex;
     align-items: center;
     margin-left: 0px;
     justify-content: flex-start;
+    transition: all 0.3s ease;
 }
 
 header .logo-img{
     width: 50px;
     height: 50px;
     object-fit: contain;
+    transition: all 0.3s ease;
 }
 
 header .container{
@@ -115,10 +118,12 @@ header a{
     text-decoration: none;
     font-weight: bold;
     color: black;
+    transition: all 0.3s ease;
 }
 
 header a:hover{
-    color: blueviolet;
+    color: #184269;
+    transform: scale(1.06);
 }
 
 #hero{
@@ -171,7 +176,7 @@ header a:hover{
 }
 #somos-proya ul li::before {
     content: "✔";
-    color: #28a745;
+    color: #00315f; /* Updated color */
     font-weight: bold;
     position: absolute;
     left: 0;
@@ -245,10 +250,15 @@ div.additional-info{
     border: 2px solid rgba(0,0,0,0.3);
     box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
     color: white;
-    background-color: rgb(101, 33, 165);
+    background-color: #00315f;
     text-decoration: none;
     margin-top: 30px;
+    transition: all 0.3s ease;
+}
 
+#final a:hover{
+    background-color: #184269;
+    text-decoration: none;
 }
 
 footer{
@@ -434,7 +444,7 @@ footer .container{
 .contact-icon svg {
     width: 50px;
     height: 50px;
-    fill: #0099e5;
+    fill: #00315f;
 }
 
 .contact-title {
@@ -445,7 +455,7 @@ footer .container{
 
 .contact-heading {
     font-size: 2.5em;
-    color: #0099e5;
+    color: #00315f;
     margin-bottom: 30px;
 }
 
@@ -490,7 +500,7 @@ textarea.form-control {
 .submit-btn {
     width: 100%;
     padding: 12px;
-    background-color: #0099e5;
+    background-color: #00315f;
     color: white;
     border: none;
     border-radius: 4px;
@@ -500,7 +510,7 @@ textarea.form-control {
 }
 
 .submit-btn:hover {
-    background-color: #0077b3;
+    background-color: #184269;
 }
 
 .whatsapp-button {
@@ -609,7 +619,7 @@ textarea.form-control {
     cursor:auto;
     border: 1px solid white;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.5s ease, transform 0.5s ease; /* Smoother hover effect */
     margin: auto; /* Center horizontally */
     margin-bottom: 20px;
     font-size: 1.5em; /* Adjust font size for arrow */
@@ -623,6 +633,7 @@ textarea.form-control {
 
 .info-btn:hover {
     background-color: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05); /* Slight scaling for hover effect */
 }
 
 label.info-btn {
@@ -639,7 +650,7 @@ label.info-btn {
     background-color: rgb(30,30,30); /* Updated background color */
     padding: 20px;
     transform: translateY(100%);
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.8s ease-in-out; /* Increased duration for smoother transition */
     max-height: 80%;
     overflow: hidden; 
   }
