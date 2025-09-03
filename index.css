@@ -102,13 +102,6 @@ header .container{
     align-items: center;
 }
 
-header nav{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding-bottom: 25px;
-}
-
 .social-icons{
     padding-top: 5px;
 }
@@ -708,3 +701,295 @@ label.info-btn {
 .card:not(:hover) .info-btn {
     background-color: rgba(255, 255, 255, 0.2);
   }
+/* --- NAVBAR RESPONSIVE --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 24px; /* Más distancia del borde derecho */
+    z-index: 2100;
+}
+
+.menu-toggle span {
+    height: 4px;
+    width: 100%;
+    background: #00315f;
+    margin: 5px 0;
+    border-radius: 2px;
+    transition: 0.4s;
+    display: block;
+}
+
+/* Overlay */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1500; /* Menor que el nav */
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+body.menu-open .nav-overlay {
+    display: block;
+    pointer-events: all;
+    opacity: 1;
+}
+
+/* Navbar para mobile */
+@media (max-width: 900px) {
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
+    }
+    header nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -100vw;
+        width: 70vw;
+        height: 100vh;
+        background: #00315f;
+        padding: 80px 30px 30px 30px;
+        transition: right 0.4s;
+        z-index: 2000;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+        text-align: left;
+        overflow-y: auto;
+    }
+    header nav.open {
+        right: 0;
+    }
+    header nav a {
+        color: #fff;
+        font-size: 1.3em;
+        margin: 18px 0;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-align: left;
+        transition: color 0.2s;
+        justify-content: flex-start;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .logo-container {
+        padding-left: 0 !important;
+    }
+    .logo-img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+}
+body.menu-open {
+    overflow: hidden;
+    touch-action: none;
+    height: 100vh;
+}
+
+.nav-overlay {
+    display: none;
+    position: fixed;
+    z-index: 1500;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+body.menu-open .nav-overlay {
+    display: block;
+    pointer-events: all;
+    opacity: 1;
+}
+
+/* Ajustes para pantallas medianas (1366x768) */
+/*@media (max-width: 1400px) {
+    .card {
+        width: 95vw;
+        max-width: 600px;
+        height: auto;
+        min-height: 400px;
+        margin: 10px auto 40px auto;
+        padding: 10px;
+    }
+    #nuestros-programas .container {
+        padding: 80px 5px;
+    }
+    #somos-proya .container {
+        padding: 100px 5px;
+    }
+    #nuestros-programas .programas {
+        flex-direction: row;
+        align-items: center;
+    }
+    #final h2 {
+        font-size: 2.5em;
+    }
+    #final a {
+        font-size: 1.1em;
+        padding: 8px 20px;
+    }
+}
+
+/* Ajustes para mobile */
+@media (max-width: 700px) {
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.1em; }
+    .card-title { font-size: 1.3em; }
+    .card {
+        width: 98vw;
+        min-width: unset;
+        max-width: unset;
+        height: auto;
+        margin: 10px 0 30px 0;
+        padding: 5px;
+    }
+    #hero {
+        height: 60vh;
+        padding: 0 5px;
+    }
+    #hero h1 {
+        font-size: 1.5em;
+        margin-top: 10px;
+    }
+    #hero a {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+    #somos-proya .container {
+        flex-direction: column !important;
+        padding: 40px 5px;
+    }
+    #somos-proya .img-container {
+        width: 90vw;
+        height: 200px;
+        margin: 0 auto 20px auto;
+    }
+    #somos-proya .texto {
+        width: 100%;
+        padding-left: 0;
+        max-width: unset;
+    }
+    #nuestros-programas .container {
+        padding: 40px 5px;
+    }
+    #nuestros-programas h2 {
+        font-size: 1.5em;
+        margin-top: 0;
+    }
+    .contact-section {
+        padding: 10px 2px;
+        height: auto;
+    }
+    .contact-heading {
+        font-size: 1.2em;
+    }
+    .form-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .form-group {
+        margin-bottom: 10px;
+    }
+    .submit-btn {
+        font-size: 1em;
+        padding: 8px;
+    }
+    .whatsapp-button {
+        bottom: 10px;
+        right: 10px;
+        padding: 7px;
+    }
+    .whatsapp-button svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* Solo para escritorio */
+@media (min-width: 901px) {
+    header nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 32px;
+        position: static;
+        background: none;
+        box-shadow: none;
+        height: auto;
+        padding: 0 40px 0 0;
+        width: 100%;
+        text-align: right;
+    }
+}
+.close-nav-btn {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 2101;
+    padding: 6px;
+    border-radius: 50%;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.close-nav-btn:hover {
+    background: rgba(255,255,255,0.08);
+}
+
+@media (min-width: 901px) {
+    .close-nav-btn {
+        display: none;
+    }
+}
+
+
+/* Uniformiza los estilos de todos los links del nav */
+header nav a,
+header nav a.nav-social {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #00315f;
+    font-weight: bold;
+    text-decoration: none;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 5px 12px;
+    margin: 0;
+    font-size: 1em;
+    transition: color 0.2s, transform 0.2s;
+    overflow: visible;
+    max-height: none;
+    white-space: nowrap;
+    transform-origin: center left; /* Hace que el scale crezca hacia la derecha */
+}
+
+header nav a.nav-social:hover,
+header nav a:hover {
+    color: #184269;
+    background: none;         /* Quita el fondo en hover */
+    box-shadow: none;         /* Quita cualquier sombra */
+    transform: scale(1.06);
+}

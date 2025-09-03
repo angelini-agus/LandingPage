@@ -27,3 +27,20 @@ document.getElementById('contactForm').addEventListener('submit', async function
         alert('Hubo un error al enviar el mensaje. Por favor, intente nuevamente.');
     }
 });
+
+// Responsive navbar hamburguesa
+const menuToggle = document.getElementById('menu-toggle');
+const nav = document.querySelector('header nav');
+
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    document.body.classList.toggle('menu-open');
+});
+
+// Cierra el nav al hacer click en cualquier link dentro del nav
+document.querySelectorAll('header nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('header nav').classList.remove('open');
+        document.body.classList.remove('menu-open');
+    });
+});
