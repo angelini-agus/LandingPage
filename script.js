@@ -31,16 +31,25 @@ document.getElementById('contactForm').addEventListener('submit', async function
 // Responsive navbar hamburguesa
 const menuToggle = document.getElementById('menu-toggle');
 const nav = document.querySelector('header nav');
+const closeNavBtn = document.querySelector('.close-nav-btn');
 
+// El botón hamburguesa SOLO abre el menú
 menuToggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
-    document.body.classList.toggle('menu-open');
+    nav.classList.add('open');
+    document.body.classList.add('menu-open');
+});
+
+// El botón flecha cierra el menú
+closeNavBtn.addEventListener('click', () => {
+    nav.classList.remove('open');
+    document.body.classList.remove('menu-open');
 });
 
 // Cierra el nav al hacer click en cualquier link dentro del nav
 document.querySelectorAll('header nav a').forEach(link => {
     link.addEventListener('click', () => {
-        document.querySelector('header nav').classList.remove('open');
+        nav.classList.remove('open');
         document.body.classList.remove('menu-open');
     });
 });
+
